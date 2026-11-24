@@ -1,5 +1,6 @@
 {
 	"openButton": "Filters",
+	"appliedFilter": "Applied filter (SearchRequestFilter)",
 	"title": "Filter",
 	"apply": "Apply",
 	"loadError": "Failed to load filters",
