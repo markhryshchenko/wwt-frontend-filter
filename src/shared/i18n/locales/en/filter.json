@@ -1,5 +1,7 @@
 {
 	"openButton": "Filters",
 	"title": "Filter",
-	"apply": "Apply"
+	"apply": "Apply",
+	"loadError": "Failed to load filters",
+	"retry": "Try again"
 }

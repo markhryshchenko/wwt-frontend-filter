@@ -11,20 +11,17 @@ import { useTranslation } from 'react-i18next'
 import CloseIcon from '@/shared/assets/icons/close.svg'
 
 type ModalProps = {
-	isOpen: boolean
 	onClose: () => void
 	title: string
 	children?: ReactNode
 	footer?: ReactNode
 }
 
-export const Modal = ({
-	isOpen,
-	onClose,
-	title,
-	children,
-	footer
-}: ModalProps) => {
+/**
+ * A mounted Modal is an open modal: render it conditionally (`{isOpen && <Modal />}`).
+ * Unmounting resets all state inside it, so every opening starts fresh.
+ */
+export const Modal = ({ onClose, title, children, footer }: ModalProps) => {
 	const { t } = useTranslation('common')
 	const dialogRef = useRef<HTMLDialogElement>(null)
 	const titleId = useId()
@@ -33,16 +30,12 @@ export const Modal = ({
 	useEffect(() => {
 		const dialog = dialogRef.current
 
-		if (!dialog) {
-			return
+		if (dialog && !dialog.open) {
+			dialog.showModal()
 		}
 
-		if (isOpen && !dialog.open) {
-			dialog.showModal()
-		} else if (!isOpen && dialog.open) {
-			dialog.close()
-		}
-	}, [isOpen])
+		return () => dialog?.close()
+	}, [])
 
 	// Esc: let React state decide whether the dialog closes
 	const handleCancel = (event: SyntheticEvent<HTMLDialogElement>) => {

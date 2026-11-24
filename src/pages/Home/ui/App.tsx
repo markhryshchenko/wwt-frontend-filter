@@ -17,10 +17,7 @@ export const App = () => {
 
 			<Button onClick={() => setIsFilterOpen(true)}>{t('openButton')}</Button>
 
-			<FilterModal
-				isOpen={isFilterOpen}
-				onClose={() => setIsFilterOpen(false)}
-			/>
+			{isFilterOpen && <FilterModal onClose={() => setIsFilterOpen(false)} />}
 		</main>
 	)
 }
