@@ -12,7 +12,6 @@ export const FilterGroup = ({
 	onToggle
 }: FilterGroupProps) => (
 	<fieldset className="border-divider py-6 not-last:border-b">
-		{/* float + w-full: the standard fix for <legend> ignoring margins inside <fieldset> */}
 		<legend className="float-left mb-4 w-full text-xl font-medium">
 			{group.name}
 		</legend>

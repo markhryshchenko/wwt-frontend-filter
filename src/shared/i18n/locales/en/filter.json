@@ -3,5 +3,10 @@
 	"title": "Filter",
 	"apply": "Apply",
 	"loadError": "Failed to load filters",
-	"retry": "Try again"
+	"retry": "Try again",
+	"confirm": {
+		"title": "Do you want to apply new filter",
+		"apply": "Apply new filter",
+		"cancel": "Use old filter"
+	}
 }

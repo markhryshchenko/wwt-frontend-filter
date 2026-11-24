@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-/* Design tokens from the Figma design system */
 @theme {
 	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
@@ -12,11 +11,9 @@
 	--color-divider: #b4b4b4;
 	--color-disabled: #f4f4f4;
 
-	/* Desktop pop-up: 12 columns × 72px + 11 gutters × 32px + 2 × 32px padding */
 	--container-popup: 1280px;
 }
 
-/* Lock page scroll while a modal dialog is open */
 html:has(dialog[open]) {
 	overflow: hidden;
 }

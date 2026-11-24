@@ -1,6 +1,5 @@
 import { SelectedFilters } from './store'
 
-/** Returns a new selection with the option added to or removed from its group. */
 export const toggleOption = (
 	selected: SelectedFilters,
 	groupId: string,
